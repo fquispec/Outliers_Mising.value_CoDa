@@ -1,0 +1,17 @@
+rm(list = ls())
+library(imputeTS)
+#library(compositions); library(mgcv);library(hydroGOF);library(psych)
+setwd(".....")
+
+file2<-"s_boli.csv" 
+data2<-read.csv(file=file2, header=TRUE, sep = ";", dec = "."); 
+
+#Identificar Outliers
+a2=data2[9:26,4:14]
+a3=na.kalman(a2)
+plot(a2)
+
+#completar datos Missing value
+a2=data2[9:26,4:14]
+a3=na.kalman(a2)
+plot(a2)
